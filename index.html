@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EduTrack RD | Seguimiento Educativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    Edu<span>Track</span> RD
+  </div>
+
+  <nav class="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#info">Sobre EduTrack</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Seguimiento Educativo en Tiempo Real</h1>
+    <p>
+      EduTrack RD es una plataforma de seguimiento educativo que organiza y fortalece la Trayectoria académica, el Rendimiento escolar, la Asistencia diaria y el Control educativo responsable de cada estudiante en la República Dominicana.
+    </p>
+
+    <div class="buttons">
+      <button onclick="mostrarLogin('padre')">Acceso Padres</button>
+      <button onclick="mostrarLogin('docente')">Acceso Docentes</button>
+      <button onclick="mostrarLogin('admin')" class="outline">Administración</button>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarLogin()">&times;</span>
+
+    <h2 id="loginTitle">Iniciar Sesión</h2>
+
+    <form onsubmit="loginPadre(event)">
+      <input 
+        type="text" 
+        id="usuario" 
+        placeholder="Cédula de identidad" 
+        required
+      >
+
+      <input 
+        type="password" 
+        id="password" 
+        placeholder="Contraseña" 
+        required
+      >
+
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

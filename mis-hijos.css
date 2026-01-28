@@ -1,0 +1,110 @@
+.hijos {
+  padding: 40px 8%;
+  background: #002d62;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.titulo {
+  margin-bottom: 30px;
+}
+
+.titulo h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.titulo p {
+  color: #e8f1ff;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.hijo-card {
+  background: #f0f4ff1a; /* ligero azul translúcido */
+  padding: 30px 25px;
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hijo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+}
+
+.hijo-card::before {
+  content: "\f007";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 3rem;
+  color: #ce1126;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.2;
+}
+
+.hijo-card h3 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.hijo-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #e8f1ff;
+}
+
+.hijo-card button {
+  margin-top: 15px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ce1126, #ff4d4d);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.hijo-card button:hover {
+  background: linear-gradient(135deg, #a80d1d, #d12b2b);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .hijos {
+    padding: 30px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo h2 {
+    font-size: 2rem;
+  }
+
+  .titulo p {
+    font-size: 0.95rem;
+  }
+
+  .hijo-card {
+    padding: 25px 20px;
+  }
+}

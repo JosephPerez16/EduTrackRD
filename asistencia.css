@@ -1,0 +1,179 @@
+.asistencia {
+  padding: 40px 6%;
+  font-family: 'Inter', sans-serif;
+  color: #1f2933;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top h1 {
+  font-size: 2rem;
+}
+
+.top p {
+  color: #6b7280;
+}
+
+.mes {
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+.card-header {
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #6b7280;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+}
+
+.dia {
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: .9rem;
+  color: #fff;
+}
+
+.ok {
+  background: #16a34a;
+}
+
+.fail {
+  background: #dc2626;
+}
+
+.late {
+  background: #facc15;
+  color: #1f2933;
+}
+
+.permiso {
+  background: #2563eb;
+}
+
+.chart-box {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto 20px;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.center-text span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.center-text small {
+  color: #6b7280;
+  font-size: .8rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.stats div {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stats b {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.stats span {
+  font-size: .8rem;
+  color: #6b7280;
+}
+
+.back-btn {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-btn button {
+  background: #1f2933;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: .9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.back-btn button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}
