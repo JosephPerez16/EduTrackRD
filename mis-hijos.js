@@ -1,13 +1,19 @@
 const hijos = [
   {
+    id: "EST-001",
     nombre: "Alison Pérez Céspedes",
     grado: "5to de Secundaria",
-    centro: "Politécnico Luis Medrano Gonzales"
+    seccion: "A",
+    centro: "Politécnico Luis Medrano Gonzales",
+    anoEscolar: "2025-2026"
   },
   {
+    id: "EST-002",
     nombre: "Amelia Pérez Céspedes",
     grado: "2do de Primaria",
-    centro: "Liceo Pastor Roberto Mendez"
+    seccion: "B",
+    centro: "Liceo Pastor Roberto Mendez",
+    anoEscolar: "2025-2026"
   }
 ];
 
@@ -19,13 +25,26 @@ hijos.forEach(hijo => {
 
   card.innerHTML = `
     <h3>${hijo.nombre}</h3>
-    <p><b>Grado:</b> ${hijo.grado}</p>
-    <p><b>Centro:</b> ${hijo.centro}</p>
+    <p><strong>ID:</strong> ${hijo.id}</p>
+    <p><strong>Grado:</strong> ${hijo.grado} - ${hijo.seccion}</p>
+    <p><strong>Centro:</strong> ${hijo.centro}</p>
+    <p><strong>Año Escolar:</strong> ${hijo.anoEscolar}</p>
     <button>Ver detalles</button>
   `;
 
   card.querySelector("button").addEventListener("click", () => {
-    localStorage.setItem("hijoSeleccionado", JSON.stringify(hijo));
+
+    const hijoSeleccionado = {
+      id: hijo.id,
+      nombre: hijo.nombre,
+      grado: hijo.grado,
+      seccion: hijo.seccion,
+      centro: hijo.centro,
+      anoEscolar: hijo.anoEscolar
+    };
+
+    localStorage.setItem("hijoSeleccionado", JSON.stringify(hijoSeleccionado));
+
     window.location.href = "dashboard-padres.html";
   });
 

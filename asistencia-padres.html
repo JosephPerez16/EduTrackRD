@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="asistencia.css">
 </head>
@@ -25,22 +24,19 @@
 <main class="asistencia">
 
   <div class="top">
-
     <div>
       <h1>Asistencia</h1>
       <p>Monitoreo mensual del estudiante</p>
     </div>
 
     <div class="mes">
-      Enero 2026
+      <select id="selectorMes"></select>
     </div>
-
   </div>
 
   <div class="layout">
 
     <section class="card calendario">
-
       <div class="card-header">
         <h3>Calendario</h3>
       </div>
@@ -51,28 +47,22 @@
       </div>
 
       <div class="grid" id="calendario"></div>
-
     </section>
 
     <section class="card resumen">
-
       <div class="card-header">
         <h3>Resumen</h3>
       </div>
 
       <div class="chart-box">
-
         <canvas id="chart"></canvas>
-
         <div class="center-text">
           <span id="porcentaje"></span>
           <small>Asistencia</small>
         </div>
-
       </div>
 
       <div class="stats">
-
         <div>
           <b id="ok"></b>
           <span>Asistencias</span>
@@ -92,19 +82,15 @@
           <b id="permiso"></b>
           <span>Permisos</span>
         </div>
-
       </div>
-
     </section>
 
   </div>
 
   <div class="back-btn">
-
     <button onclick="location.href='dashboard-padres.html'">
       ← Volver al Panel
     </button>
-
   </div>
 
 </main>

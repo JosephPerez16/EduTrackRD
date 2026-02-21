@@ -4,19 +4,15 @@
   <meta charset="UTF-8">
   <title>EduTrack RD | Panel Padres</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
 
 <header class="header">
-  <div class="logo">
-    Edu<span>Track</span> RD
-  </div>
-
+  <div class="logo">Edu<span>Track</span> RD</div>
   <nav class="nav">
     <a href="#">Panel</a>
     <a href="mis-hijos.html">Cambiar hijo</a>
@@ -28,36 +24,44 @@
 
   <section class="welcome">
     <h2 id="nombreHijo"></h2>
-    <p id="infoHijo"></p>
+    <div class="student-details">
+      <div><span class="label">ID</span><span id="detalleId"></span></div>
+      <div><span class="label">Grado</span><span id="detalleGrado"></span></div>
+      <div><span class="label">Centro</span><span id="detalleCentro"></span></div>
+      <div><span class="label">Año Escolar</span><span id="detalleAno"></span></div>
+    </div>
   </section>
 
   <section class="cards">
-
     <div class="card principal" onclick="location.href='asistencia-padres.html'">
+      <i class="fas fa-calendar-check fa-2x"></i>
       <h3>Asistencia</h3>
       <p>Asistencia diaria del estudiante</p>
     </div>
 
     <div class="card permisos-card" id="openPermiso">
+      <i class="fas fa-file-upload fa-2x"></i>
       <h3>Permisos</h3>
       <p>Subir justificantes</p>
     </div>
 
     <div class="card">
+      <i class="fas fa-graduation-cap fa-2x"></i>
       <h3>Calificaciones</h3>
       <p>Notas académicas</p>
     </div>
 
     <div class="card">
+      <i class="fas fa-comment-dots fa-2x"></i>
       <h3>Observaciones</h3>
       <p>Comentarios docentes</p>
     </div>
 
     <div class="card">
+      <i class="fas fa-bullhorn fa-2x"></i>
       <h3>Comunicados</h3>
       <p>Avisos del centro</p>
     </div>
-
   </section>
 
   <section class="logout">
@@ -66,44 +70,18 @@
 
 </main>
 
-
 <div class="modal" id="modalPermiso">
-
   <div class="modal-content">
-
     <span class="close" id="closeModal">&times;</span>
-
     <h2>Solicitar Permiso</h2>
-
     <form id="permisoForm">
-
-      <input
-        type="text"
-        placeholder="Motivo del permiso"
-        required
-      >
-
-      <input
-        type="date"
-        required
-      >
-
-      <input
-        type="file"
-        accept=".pdf,.jpg,.png"
-        required
-      >
-
-      <button type="submit">
-        Enviar Solicitud
-      </button>
-
+      <input type="text" placeholder="Motivo del permiso" required>
+      <input type="date" required>
+      <input type="file" accept=".pdf,.jpg,.png" required>
+      <button type="submit">Enviar Solicitud</button>
     </form>
-
   </div>
-
 </div>
-
 
 <script src="dashboard.js"></script>
 </body>
