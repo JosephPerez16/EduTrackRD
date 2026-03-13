@@ -467,3 +467,14 @@ body.register-mode .register-only {
     align-items: flex-start;
   }
 }
+
+body {
+  opacity: 0;
+  animation: aparecer 0.8s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+  }
+}

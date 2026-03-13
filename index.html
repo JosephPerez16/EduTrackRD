@@ -37,8 +37,13 @@
     </p>
 
     <div class="buttons">
-      <button onclick="activarModo('login')">Iniciar sesión</button>
-      <button onclick="activarModo('register')" class="outline">Registrarse</button>
+      <button onclick="activarModo('login'); document.querySelector('.auth-card').scrollIntoView({behavior:'smooth'});">
+        Iniciar sesión
+      </button>
+
+      <button onclick="activarModo('register'); document.querySelector('.auth-card').scrollIntoView({behavior:'smooth'});" class="outline">
+        Registrarse
+      </button>
     </div>
 
     <div class="hero-panel">
@@ -68,7 +73,7 @@
 
   <div class="auth-card">
     <div class="card-top">
-      <h2 id="panelTitle">Acceso a la Plataforma</h2>
+      <h2 id="panelTitle">Acceso Padres / Tutores</h2>
       <p id="panelSubtitle">Ingrese sus credenciales para acceder a la plataforma.</p>
     </div>
 
@@ -85,6 +90,7 @@
 
     <form id="authForm" class="auth-form">
       <div class="form-grid">
+
         <div class="input-group register-only">
           <label for="nombre">Nombre completo</label>
           <input type="text" id="nombre" placeholder="Ingrese su nombre completo">
@@ -114,11 +120,17 @@
           <label for="confirmPassword">Confirmar contraseña</label>
           <input type="password" id="confirmPassword" placeholder="Confirme su contraseña">
         </div>
+
       </div>
 
       <button type="submit" class="submit-btn" id="submitBtn">Ingresar</button>
-      <p class="helper-text" id="helperText">¿No tienes cuenta? <span onclick="activarModo('register')">Regístrate aquí</span></p>
+
+      <p class="helper-text" id="helperText">
+        ¿No tienes cuenta? <span onclick="activarModo('register')">Regístrate aquí</span>
+      </p>
+
       <p class="status-message" id="statusMessage"></p>
+
     </form>
   </div>
 </section>
@@ -131,12 +143,12 @@
 
   <div class="info-box">
     <h3>Control y seguimiento</h3>
-    <p>La información académica se presenta de manera clara para favorecer la supervisión, el acompañamiento y la toma de decisiones.</p>
+    <p>La información académica se presenta de manera clara para favorecer la supervisión y el acompañamiento educativo.</p>
   </div>
 
   <div class="info-box">
     <h3>Entorno institucional</h3>
-    <p>EduTrack RD fortalece la relación entre centro educativo, docentes y familias dentro de una experiencia moderna y organizada.</p>
+    <p>EduTrack RD fortalece la relación entre centro educativo, docentes y familias.</p>
   </div>
 </section>
 

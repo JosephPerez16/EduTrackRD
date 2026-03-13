@@ -200,3 +200,7 @@ authForm.addEventListener("submit", function (e) {
 
 actualizarRol("padre");
 activarModo("login");
+
+window.addEventListener("load", () => {
+  identificador.focus();
+});
