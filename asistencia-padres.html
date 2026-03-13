@@ -5,7 +5,9 @@
   <title>EduTrack RD | Asistencia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="asistencia.css">
 </head>
@@ -13,7 +15,6 @@
 
 <header class="header">
   <div class="logo">Edu<span>Track</span> RD</div>
-
   <nav class="nav">
     <a href="dashboard-padres.html">Panel</a>
     <a class="active" href="#">Asistencia</a>
@@ -23,74 +24,149 @@
 
 <main class="asistencia">
 
-  <div class="top">
-    <div>
-      <h1>Asistencia</h1>
-      <p>Monitoreo mensual del estudiante</p>
+  <section class="hero-resumen">
+    <div class="hero-left">
+      <span class="badge">Monitoreo académico</span>
+      <h1>Asistencia del estudiante</h1>
+      <p>
+        Visualiza la asistencia mensual, el comportamiento semanal y el resumen general del estudiante.
+      </p>
+
+      <div class="student-chip">
+        <div>
+          <small>Estudiante</small>
+          <strong id="nombreHijo"></strong>
+        </div>
+        <div>
+          <small>Grado</small>
+          <strong id="detalleGrado"></strong>
+        </div>
+        <div>
+          <small>Centro</small>
+          <strong id="detalleCentro"></strong>
+        </div>
+      </div>
     </div>
 
-    <div class="mes">
-      <select id="selectorMes"></select>
+    <div class="hero-right">
+      <div class="selector-box">
+        <label for="selectorMes">Mes lectivo</label>
+        <select id="selectorMes"></select>
+      </div>
+
+      <div class="mini-summary">
+        <div class="mini-card">
+          <span>Presencia</span>
+          <strong id="porcentajeTop">0%</strong>
+        </div>
+        <div class="mini-card">
+          <span>Días lectivos</span>
+          <strong id="diasLectivos">0</strong>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="layout">
+  <section class="main-layout">
 
-    <section class="card calendario">
-      <div class="card-header">
-        <h3>Calendario</h3>
+    <section class="panel-card calendario-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Calendario mensual</h2>
+          <p id="mesActualTexto">Visualización del mes seleccionado</p>
+        </div>
       </div>
 
       <div class="dias">
-        <span>L</span><span>M</span><span>X</span>
-        <span>J</span><span>V</span>
+        <span>L</span>
+        <span>M</span>
+        <span>X</span>
+        <span>J</span>
+        <span>V</span>
       </div>
 
       <div class="grid" id="calendario"></div>
     </section>
 
-    <section class="card resumen">
-      <div class="card-header">
-        <h3>Resumen</h3>
+    <section class="panel-card resumen-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Resumen general</h2>
+          <p>Distribución de asistencia del mes</p>
+        </div>
       </div>
 
       <div class="chart-box">
-        <canvas id="chart"></canvas>
+        <canvas id="chartResumen"></canvas>
         <div class="center-text">
           <span id="porcentaje"></span>
           <small>Asistencia</small>
         </div>
       </div>
 
-      <div class="stats">
-        <div>
-          <b id="ok"></b>
+      <div class="custom-legend">
+        <div class="legend-item">
+          <span class="legend-color ok-color"></span>
           <span>Asistencias</span>
         </div>
-
-        <div>
-          <b id="fail"></b>
+        <div class="legend-item">
+          <span class="legend-color fail-color"></span>
           <span>Faltas</span>
         </div>
-
-        <div>
-          <b id="late"></b>
+        <div class="legend-item">
+          <span class="legend-color late-color"></span>
           <span>Tardanzas</span>
         </div>
-
-        <div>
-          <b id="permiso"></b>
+        <div class="legend-item">
+          <span class="legend-color permiso-color"></span>
           <span>Permisos</span>
         </div>
       </div>
     </section>
 
-  </div>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card ok-stat">
+      <span>Asistencias</span>
+      <strong id="ok">0</strong>
+      <small>Presencia confirmada</small>
+    </div>
+
+    <div class="stat-card fail-stat">
+      <span>Faltas</span>
+      <strong id="fail">0</strong>
+      <small>Ausencias registradas</small>
+    </div>
+
+    <div class="stat-card late-stat">
+      <span>Tardanzas</span>
+      <strong id="late">0</strong>
+      <small>Entradas fuera de hora</small>
+    </div>
+
+    <div class="stat-card permiso-stat">
+      <span>Permisos</span>
+      <strong id="permiso">0</strong>
+      <small>Justificaciones aprobadas</small>
+    </div>
+  </section>
+
+  <section class="panel-card tendencia-panel">
+    <div class="panel-header">
+      <div>
+        <h2>Tendencia semanal</h2>
+        <p>Comportamiento de asistencia durante el mes</p>
+      </div>
+    </div>
+
+    <div class="trend-chart-box">
+      <canvas id="chartTendencia"></canvas>
+    </div>
+  </section>
 
   <div class="back-btn">
-    <button onclick="location.href='dashboard-padres.html'">
-      ← Volver al Panel
-    </button>
+    <button onclick="location.href='dashboard-padres.html'">← Volver al Panel</button>
   </div>
 
 </main>

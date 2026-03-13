@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTrack RD | Calificaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="calificaciones-padres.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Edu<span>Track</span> RD</div>
+    <nav class="nav">
+      <a href="dashboard-padres.html">Panel</a>
+      <a href="mis-hijos.html">Cambiar hijo</a>
+      <a href="#">Soporte</a>
+    </nav>
+  </header>
+
+  <main class="grades-page">
+    <section class="grades-hero">
+      <div class="hero-left">
+        <span class="hero-badge">Panel de calificaciones</span>
+        <h1>Rendimiento académico del estudiante</h1>
+        <p>Consulta las calificaciones registradas por materia, visualiza los parciales, examen final, promedio general y el estado del estudiante según el cuatrimestre seleccionado.</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="student-info-card">
+          <div class="student-info-item">
+            <span class="info-label">Estudiante</span>
+            <span class="info-value" id="studentName">Estudiante no seleccionado</span>
+          </div>
+
+          <div class="student-info-grid">
+            <div class="student-info-item">
+              <span class="info-label">ID</span>
+              <span class="info-value" id="studentId">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Grado</span>
+              <span class="info-value" id="studentGrade">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Sección</span>
+              <span class="info-value" id="studentSection">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Año Escolar</span>
+              <span class="info-value" id="studentYear">-</span>
+            </div>
+          </div>
+
+          <div class="student-info-item">
+            <span class="info-label">Centro Educativo</span>
+            <span class="info-value" id="studentSchool">-</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-cards">
+      <article class="summary-card average-card">
+        <div class="summary-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="summary-content">
+          <span>Promedio general</span>
+          <div id="averageGrade">0</div>
+        </div>
+      </article>
+
+      <article class="summary-card approved-card">
+        <div class="summary-icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+        <div class="summary-content">
+          <span>Materias aprobadas</span>
+          <strong id="approvedSubjects">0/0</strong>
+        </div>
+      </article>
+
+      <article class="summary-card total-card">
+        <div class="summary-icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="summary-content">
+          <span>Total de materias</span>
+          <strong id="totalSubjects">0</strong>
+        </div>
+      </article>
+    </section>
+
+    <section class="grades-panel">
+      <div class="panel-header">
+        <div class="panel-header-text">
+          <h2>Calificaciones registradas</h2>
+          <p>Detalle del cuatrimestre seleccionado por cada asignatura.</p>
+        </div>
+
+        <div class="panel-actions">
+          <div class="filter-box">
+            <label for="quarterSelect">Cuatrimestre</label>
+            <select id="quarterSelect">
+              <option value="1er Cuatrimestre">1er Cuatrimestre</option>
+              <option value="2do Cuatrimestre">2do Cuatrimestre</option>
+              <option value="3er Cuatrimestre">3er Cuatrimestre</option>
+            </select>
+          </div>
+
+          <a href="dashboard-padres.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Volver al panel
+          </a>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="grades-table">
+          <thead>
+            <tr>
+              <th>Materia</th>
+              <th>P1</th>
+              <th>P2</th>
+              <th>P3</th>
+              <th>Examen Final</th>
+              <th>Promedio</th>
+              <th>Estado</th>
+              <th>Cuatrimestre</th>
+            </tr>
+          </thead>
+          <tbody id="gradesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="calificaciones-padres.js"></script>
+</body>
+</html>

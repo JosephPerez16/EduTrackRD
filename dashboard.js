@@ -1,5 +1,8 @@
 const hijo = JSON.parse(localStorage.getItem("hijoSeleccionado"));
-if (!hijo) window.location.href = "mis-hijos.html";
+
+if (!hijo) {
+  window.location.href = "mis-hijos.html";
+}
 
 document.getElementById("nombreHijo").textContent = hijo.nombre;
 document.getElementById("detalleId").textContent = hijo.id;
@@ -17,20 +20,23 @@ const openPermiso = document.getElementById("openPermiso");
 const closePermiso = document.getElementById("closeModal");
 const formPermiso = document.getElementById("permisoForm");
 
-const cerrarModal = () => {
+function cerrarModal() {
   modalPermiso.style.display = "none";
   document.body.style.overflow = "auto";
-};
+}
 
-openPermiso.addEventListener("click", () => {
+function abrirModal() {
   modalPermiso.style.display = "flex";
   document.body.style.overflow = "hidden";
-});
+}
 
+openPermiso.addEventListener("click", abrirModal);
 closePermiso.addEventListener("click", cerrarModal);
 
 modalPermiso.addEventListener("click", (e) => {
-  if (e.target === modalPermiso) cerrarModal();
+  if (e.target === modalPermiso) {
+    cerrarModal();
+  }
 });
 
 formPermiso.addEventListener("submit", (e) => {

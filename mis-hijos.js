@@ -19,34 +19,49 @@ const hijos = [
 
 const contenedor = document.getElementById("listaHijos");
 
-hijos.forEach(hijo => {
-  const card = document.createElement("div");
-  card.className = "hijo-card";
+function renderHijos(lista) {
+  if (!lista || lista.length === 0) {
+    contenedor.innerHTML = `
+      <div class="hijo-card">
+        <h3>No hay estudiantes registrados</h3>
+        <p>Cuando se agreguen estudiantes aparecerán aquí.</p>
+      </div>
+    `;
+    return;
+  }
 
-  card.innerHTML = `
-    <h3>${hijo.nombre}</h3>
-    <p><strong>ID:</strong> ${hijo.id}</p>
-    <p><strong>Grado:</strong> ${hijo.grado} - ${hijo.seccion}</p>
-    <p><strong>Centro:</strong> ${hijo.centro}</p>
-    <p><strong>Año Escolar:</strong> ${hijo.anoEscolar}</p>
-    <button>Ver detalles</button>
-  `;
+  lista.forEach((hijo) => {
+    const card = document.createElement("div");
+    card.className = "hijo-card";
 
-  card.querySelector("button").addEventListener("click", () => {
+    card.innerHTML = `
+      <h3>${hijo.nombre}</h3>
+      <p><strong>ID:</strong> ${hijo.id}</p>
+      <p><strong>Grado:</strong> ${hijo.grado} - ${hijo.seccion}</p>
+      <p><strong>Centro:</strong> ${hijo.centro}</p>
+      <p><strong>Año Escolar:</strong> ${hijo.anoEscolar}</p>
+      <button>Ver detalles</button>
+    `;
 
-    const hijoSeleccionado = {
-      id: hijo.id,
-      nombre: hijo.nombre,
-      grado: hijo.grado,
-      seccion: hijo.seccion,
-      centro: hijo.centro,
-      anoEscolar: hijo.anoEscolar
-    };
+    const btn = card.querySelector("button");
 
-    localStorage.setItem("hijoSeleccionado", JSON.stringify(hijoSeleccionado));
+    btn.addEventListener("click", () => {
+      const hijoSeleccionado = {
+        id: hijo.id,
+        nombre: hijo.nombre,
+        grado: hijo.grado,
+        seccion: hijo.seccion,
+        centro: hijo.centro,
+        anoEscolar: hijo.anoEscolar
+      };
 
-    window.location.href = "dashboard-padres.html";
+      localStorage.setItem("hijoSeleccionado", JSON.stringify(hijoSeleccionado));
+      window.location.href = "dashboard-padres.html";
+    });
+
+    contenedor.appendChild(card);
   });
+}
 
-  contenedor.appendChild(card);
-});
+renderHijos(hijos);
+

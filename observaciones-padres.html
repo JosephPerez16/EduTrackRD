@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTrack RD | Observaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="observaciones-padres.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Edu<span>Track</span> RD</div>
+    <nav class="nav">
+      <a href="dashboard-padres.html">Panel</a>
+      <a href="mis-hijos.html">Cambiar hijo</a>
+      <a href="#">Soporte</a>
+    </nav>
+  </header>
+
+  <main class="observations-page">
+    <section class="observations-hero">
+      <div class="hero-left">
+        <span class="hero-badge">Panel de observaciones</span>
+        <h1>Seguimiento integral del estudiante</h1>
+        <p>Consulta observaciones académicas, comportamiento, educación, participación y recomendaciones generales según el cuatrimestre seleccionado.</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="student-info-card">
+          <div class="student-info-item">
+            <span class="info-label">Estudiante</span>
+            <span class="info-value" id="studentName">Estudiante no seleccionado</span>
+          </div>
+
+          <div class="student-info-grid">
+            <div class="student-info-item">
+              <span class="info-label">ID</span>
+              <span class="info-value" id="studentId">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Grado</span>
+              <span class="info-value" id="studentGrade">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Sección</span>
+              <span class="info-value" id="studentSection">-</span>
+            </div>
+
+            <div class="student-info-item">
+              <span class="info-label">Año Escolar</span>
+              <span class="info-value" id="studentYear">-</span>
+            </div>
+          </div>
+
+          <div class="student-info-item">
+            <span class="info-label">Centro Educativo</span>
+            <span class="info-value" id="studentSchool">-</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-cards">
+      <article class="summary-card summary-main">
+        <div class="summary-icon">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <div class="summary-content">
+          <span>Evaluación general</span>
+          <div id="generalStatus">-</div>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">
+          <i class="fas fa-school"></i>
+        </div>
+        <div class="summary-content">
+          <span>Conducta</span>
+          <strong id="conductStatus">-</strong>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">
+          <i class="fas fa-book-reader"></i>
+        </div>
+        <div class="summary-content">
+          <span>Participación</span>
+          <strong id="participationStatus">-</strong>
+        </div>
+      </article>
+    </section>
+
+    <section class="observations-panel">
+      <div class="panel-header">
+        <div class="panel-header-text">
+          <h2>Observaciones registradas</h2>
+          <p>Seguimiento cualitativo del estudiante por categoría.</p>
+        </div>
+
+        <div class="panel-actions">
+          <div class="filter-box">
+            <label for="quarterSelect">Cuatrimestre</label>
+            <select id="quarterSelect">
+              <option value="1er Cuatrimestre">1er Cuatrimestre</option>
+              <option value="2do Cuatrimestre">2do Cuatrimestre</option>
+              <option value="3er Cuatrimestre">3er Cuatrimestre</option>
+            </select>
+          </div>
+
+          <a href="dashboard-padres.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Volver al panel
+          </a>
+        </div>
+      </div>
+
+      <div class="observations-grid" id="observationsGrid"></div>
+    </section>
+  </main>
+
+  <script src="observaciones-padres.js"></script>
+</body>
+</html>

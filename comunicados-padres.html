@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTrack RD | Comunicados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="comunicados-padres.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Edu<span>Track</span> RD</div>
+    <nav class="nav">
+      <a href="dashboard-padres.html">Panel</a>
+      <a href="mis-hijos.html">Cambiar hijo</a>
+      <a href="#">Soporte</a>
+    </nav>
+  </header>
+
+  <main class="announcements-page">
+    <section class="announcements-hero">
+      <div class="hero-left hero-full">
+        <span class="hero-badge">Panel de comunicados</span>
+        <h1>Comunicados del centro educativo</h1>
+        <p id="schoolName">Centro educativo</p>
+      </div>
+    </section>
+
+    <section class="summary-cards">
+      <article class="summary-card summary-main">
+        <div class="summary-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <div class="summary-content">
+          <span>Total de comunicados</span>
+          <strong id="totalAnnouncements">0</strong>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">
+          <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <div class="summary-content">
+          <span>Importantes</span>
+          <strong id="importantAnnouncements">0</strong>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="summary-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="summary-content">
+          <span>Último aviso</span>
+          <strong id="latestAnnouncement">-</strong>
+        </div>
+      </article>
+    </section>
+
+    <section class="announcements-panel">
+      <div class="panel-header">
+        <div class="panel-header-text">
+          <h2>Comunicados publicados</h2>
+          <p>Revisa los avisos más recientes del centro educativo.</p>
+        </div>
+
+        <div class="panel-actions">
+          <div class="filter-box">
+            <label for="announcementFilter">Tipo de comunicado</label>
+            <select id="announcementFilter">
+              <option value="Todos">Todos</option>
+              <option value="Importante">Importante</option>
+              <option value="Informativo">Informativo</option>
+              <option value="Recordatorio">Recordatorio</option>
+              <option value="Actividad">Actividad</option>
+              <option value="Administrativo">Administrativo</option>
+            </select>
+          </div>
+
+          <a href="dashboard-padres.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Volver al panel
+          </a>
+        </div>
+      </div>
+
+      <div class="announcements-list" id="announcementsList"></div>
+    </section>
+  </main>
+
+  <script src="comunicados-padres.js"></script>
+</body>
+</html>

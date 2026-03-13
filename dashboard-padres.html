@@ -14,7 +14,7 @@
 <header class="header">
   <div class="logo">Edu<span>Track</span> RD</div>
   <nav class="nav">
-    <a href="#">Panel</a>
+    <a class="active" href="#">Panel</a>
     <a href="mis-hijos.html">Cambiar hijo</a>
     <a href="#">Soporte</a>
   </nav>
@@ -23,7 +23,11 @@
 <main class="dashboard">
 
   <section class="welcome">
-    <h2 id="nombreHijo"></h2>
+    <div class="welcome-text">
+      <span class="welcome-badge">Panel del estudiante</span>
+      <h2 id="nombreHijo"></h2>
+    </div>
+
     <div class="student-details">
       <div><span class="label">ID</span><span id="detalleId"></span></div>
       <div><span class="label">Grado</span><span id="detalleGrado"></span></div>
@@ -45,19 +49,19 @@
       <p>Subir justificantes</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="location.href='calificaciones-padres.html'">
       <i class="fas fa-graduation-cap fa-2x"></i>
       <h3>Calificaciones</h3>
       <p>Notas académicas</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="location.href='observaciones-padres.html'">
       <i class="fas fa-comment-dots fa-2x"></i>
       <h3>Observaciones</h3>
       <p>Comentarios docentes</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="location.href='comunicados-padres.html'">
       <i class="fas fa-bullhorn fa-2x"></i>
       <h3>Comunicados</h3>
       <p>Avisos del centro</p>
