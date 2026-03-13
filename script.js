@@ -20,6 +20,8 @@ let rolActual = "padre";
 function activarModo(modo) {
   modoActual = modo;
 
+  authForm.reset();
+
   if (modo === "register") {
     document.body.classList.add("register-mode");
     loginTab.classList.remove("active");
@@ -112,12 +114,13 @@ authForm.addEventListener("submit", function (e) {
 
   const valorNombre = nombre.value.trim();
   const valorTelefono = telefono.value.trim();
-  const valorIdentificador = identificador.value.trim();
-  const valorCorreo = correo.value.trim();
+  const valorIdentificador = identificador.value.trim().toLowerCase();
+  const valorCorreo = correo.value.trim().toLowerCase();
   const valorPassword = password.value.trim();
   const valorConfirmPassword = confirmPassword.value.trim();
 
   if (modoActual === "register") {
+
     if (!valorNombre || !valorTelefono || !valorIdentificador || !valorCorreo || !valorPassword || !valorConfirmPassword) {
       mostrarMensaje("Complete todos los campos requeridos.");
       return;
@@ -131,8 +134,8 @@ authForm.addEventListener("submit", function (e) {
     const usuarios = obtenerUsuarios();
 
     const existe = usuarios.some(usuario =>
-      usuario.identificador.toLowerCase() === valorIdentificador.toLowerCase() ||
-      usuario.correo.toLowerCase() === valorCorreo.toLowerCase()
+      usuario.identificador.toLowerCase() === valorIdentificador ||
+      usuario.correo.toLowerCase() === valorCorreo
     );
 
     if (existe) {
@@ -151,10 +154,13 @@ authForm.addEventListener("submit", function (e) {
 
     usuarios.push(nuevoUsuario);
     guardarUsuarios(usuarios);
+
     authForm.reset();
     activarModo("login");
     actualizarRol(rolActual);
+
     identificador.value = valorIdentificador;
+
     mostrarMensaje("Registro completado correctamente. Ya puede iniciar sesión.");
     return;
   }
@@ -168,9 +174,9 @@ authForm.addEventListener("submit", function (e) {
     guardarSesion({
       rol: "padre",
       nombre: "Usuario Demo",
-      identificador: "40224413530",
-      demo: true
+      identificador: "40224413530"
     });
+
     redireccionarPorRol("padre");
     return;
   }
@@ -179,7 +185,7 @@ authForm.addEventListener("submit", function (e) {
 
   const usuarioEncontrado = usuarios.find(usuario =>
     usuario.rol === rolActual &&
-    usuario.identificador.toLowerCase() === valorIdentificador.toLowerCase() &&
+    usuario.identificador.toLowerCase() === valorIdentificador &&
     usuario.password === valorPassword
   );
 
